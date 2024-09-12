@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.610c6860.css",
+    "main.js": "/static/js/main.fc3392cd.js",
+    "static/media/DesktopBG.png": "/static/media/DesktopBG.41144a911be08507aa8e.png",
+    "static/media/FooterLeft.png": "/static/media/FooterLeft.48272611b4be4d294089.png",
+    "static/media/Chelik.svg": "/static/media/Chelik.23d757f6bc98d3e88545db6360b516ec.svg",
+    "static/media/MobileBG.png": "/static/media/MobileBG.9b5bfa2521601e39745f.png",
+    "static/media/Calendar.svg": "/static/media/Calendar.0597307e5425539d8432907a89c41b7c.svg",
+    "static/media/Pazl.svg": "/static/media/Pazl.c04ad26c4b7a0cde1562c7fa4804eab5.svg",
+    "static/media/Brand2.svg": "/static/media/Brand2.1f2d8835302e4e7add08294c430cf4f2.svg",
+    "static/media/Brand3.svg": "/static/media/Brand3.3906111c1fad97cfea758827e821a1af.svg",
+    "static/media/Brand1.svg": "/static/media/Brand1.be2b2dc9fd4e52c627bb52423ffa9605.svg",
+    "static/media/Instagram.svg": "/static/media/Instagram.f1a48f9ed737eaeefcd7d69275e59582.svg",
+    "static/media/Whatsapp.svg": "/static/media/Whatsapp.696b51a29702cb751c4e280d101b39de.svg",
+    "static/media/Phone.svg": "/static/media/Phone.39c5079ec64418422acc65ace8abac3b.svg",
+    "index.html": "/index.html",
+    "static/media/Trash.svg": "/static/media/Trash.8bb8b235faa35b2fcfffb71f4d79fea8.svg",
+    "static/media/Facebook.svg": "/static/media/Facebook.aa197f1d0f06e0048c7957997ec79492.svg",
+    "static/media/Users.svg": "/static/media/Users.9c590e73941d9603f4b3a6956c3a779f.svg",
+    "static/media/LogOut.svg": "/static/media/LogOut.bf076ef69a3e26762f4f4b881fe08215.svg",
+    "static/media/Close.svg": "/static/media/Close.da3fec72bdc9185a852cb79eefd36270.svg",
+    "static/media/Burger.svg": "/static/media/Burger.d76e8db7d9884fb208990593740930ae.svg",
+    "static/media/Triangle2.svg": "/static/media/Triangle2.ef0820d9bd298550ffc35439ddb0da07.svg",
+    "static/media/Triangle3.svg": "/static/media/Triangle3.65b102eb3c6eff07dd72d4ba36f193cf.svg",
+    "static/media/Triangle1.svg": "/static/media/Triangle1.382f56da626031863847bac8cfd5c136.svg",
+    "main.610c6860.css.map": "/static/css/main.610c6860.css.map",
+    "main.fc3392cd.js.map": "/static/js/main.fc3392cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.610c6860.css",
+    "static/js/main.fc3392cd.js"
+  ]
+}

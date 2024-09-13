@@ -8,11 +8,13 @@ import Franchisee from "./Pages/Franchisee";
 import Franshiza from "./Pages/Franshiza";
 import Gratitude from "./Pages/Gratitude";
 import Supervisors from "./Pages/Supervisors";
+import Accessories from "./Pages/Accessories";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([
         { path: "/", element: <Home /> },
         { path: "/gratitude", element: <Gratitude /> },
+        { path: "/accessories", element: <Accessories /> },
         { path: "/:id", element: <Home /> },
         { path: "/Franchise", element: <Franshiza /> },
         { path: "/login", element: <Login /> },

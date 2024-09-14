@@ -9,7 +9,7 @@ export default function Accessories() {
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        pdfjs.GlobalWorkerOptions.workerSrc = "/js/pdf.worker.min.mjs";
+        pdfjs.GlobalWorkerOptions.workerSrc = "/js/pdf.worker.min.js";
 
         // Обработчик для изменения ширины экрана
         const handleResize = () => {

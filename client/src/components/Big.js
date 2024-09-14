@@ -1,7 +1,5 @@
 import React, { forwardRef, useState } from "react";
 import { ReactComponent as Chelik } from "../assets/icons/Chelik.svg";
-import { ReactComponent as Pazl } from "../assets/icons/Pazl.svg";
-import { ReactComponent as Calendar } from "../assets/icons/Calendar.svg";
 import {
     Box,
     Dialog,

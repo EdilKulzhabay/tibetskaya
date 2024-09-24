@@ -276,7 +276,7 @@ const Big = forwardRef((props, refs) => {
                                 За 1 бутыль воды 18,9 л
                             </div>
                             <div className="p-5 border-b border-r border-black text-[22px] font-bold text-[#EF4130] text-center">
-                                200 ₸
+                                250 ₸
                             </div>
                             <div className="p-5 border-b border-black text-[22px] font-bold text-center">
                                 1300 ₸
@@ -326,7 +326,7 @@ const Big = forwardRef((props, refs) => {
                                     За 1 бутыль воды 18,9 л
                                 </div>
                                 <div className="p-5 border-b border-r border-black text-[30px] 2xl:text-[36px] font-bold text-[#EF4130] text-center">
-                                    200 ₸
+                                    250 ₸
                                 </div>
                                 <div className="p-5 border-b border-black text-[30px] 2xl:text-[36px] font-bold text-center">
                                     1300 ₸

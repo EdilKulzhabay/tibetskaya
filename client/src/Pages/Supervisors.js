@@ -43,7 +43,7 @@ export default function Supervisors() {
                             <img src="../images/Aray.png" alt={name} />
                         )}
                         {name === "Aidynbek" && (
-                            <img src="../images/Aidynbek.jpg" alt={name} />
+                            <img src="../images/Aidynbek.jpg" alt={name} className="w-[200px]" />
                         )}
                     </div>
 

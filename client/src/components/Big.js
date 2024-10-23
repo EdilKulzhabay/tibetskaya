@@ -1,5 +1,4 @@
 import React, { forwardRef, useState } from "react";
-import { ReactComponent as Chelik } from "../assets/icons/Chelik.svg";
 import {
     Box,
     Dialog,
@@ -254,7 +253,7 @@ const Big = forwardRef((props, refs) => {
             <div className="lg:hidden mt-10">
                 <div className="flex items-center justify-center">
                     <img
-                        src="./images/Chelik.svg"
+                        src="./images/Chelik.png"
                         className="md:w-[60%]"
                         alt="Человек с водой"
                     />
@@ -307,7 +306,12 @@ const Big = forwardRef((props, refs) => {
                 <div className="bg-[#c9e5f7] absolute top-[34%] -translate-y-1/4 h-[220px] inset-x-0"></div>
                 <div className="container mx-auto px-5 mt-10 pb-10 lg:mt-20 lg:px-10 xl:px-24 z-20 flex items-center ">
                     <div className="z-10">
-                        <Chelik className="lg:w-[95%] z-10" />
+                        <img
+                            src="./images/Chelik.png"
+                            className="lg:w-[95%] z-10"
+                            alt="Человек с водой"
+                        />
+                        {/* <Chelik className="lg:w-[95%] z-10" /> */}
                     </div>
                     <div className="ml-5 pt-14 z-10">
                         <p className="text-center text-[40px] font-medium">

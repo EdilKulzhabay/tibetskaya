@@ -242,7 +242,7 @@ export default function UserInfo() {
                                 <div className="p-1 bg-gray-500">
                                     <img
                                         className="h-7"
-                                        //src={`http://localhost:5000${imageUrl}`}
+                                        // src={`http://localhost:5002${imageUrl}`}
                                         src={`https://api.tibetskaya.kz${imageUrl}`}
                                         alt={productName}
                                     />
@@ -362,7 +362,7 @@ export default function UserInfo() {
                                 <div className="flex justify-center">
                                     <img
                                         className="max-h-[200px]"
-                                        //src={`http://localhost:5000${item.imageUrl}`}
+                                        // src={`http://localhost:5002${item.imageUrl}`}
                                         src={`https://api.tibetskaya.kz${item.imageUrl}`}
                                         alt={item.name}
                                     />
@@ -471,7 +471,7 @@ export default function UserInfo() {
                                 <div className="p-1 bg-gray-500">
                                     <img
                                         className="h-7"
-                                        //src={`http://localhost:5000${imageUrl}`}
+                                        // src={`http://localhost:5002${imageUrl}`}
                                         src={`https://api.tibetskaya.kz${imageUrl}`}
                                         alt={productName}
                                     />

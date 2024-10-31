@@ -19,6 +19,7 @@ export const useRoutes = () => {
         { path: "/Franchise", element: <Franshiza /> },
         { path: "/login", element: <Login /> },
         { path: "/Tamshy/:name", element: <Supervisors /> },
+        { path: "/agreement", element: <Agreement /> },
         {
             path: "/admin",
             element: <Admin />,

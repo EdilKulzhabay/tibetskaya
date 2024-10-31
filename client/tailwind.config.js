@@ -4,8 +4,8 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                mobile: "url('./images/MobileBG.svg')",
-                desktop: "url('./images/DesktopBG.svg')",
+                mobile: "url('./images/MobileBG.png')",
+                desktop: "url('./images/DesktopBG.png')",
                 footer: "url('./images/FooterLeft.png')",
             },
         },

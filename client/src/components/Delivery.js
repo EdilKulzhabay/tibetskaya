@@ -14,14 +14,14 @@ const Delivery = forwardRef((props, ref) => {
                 </p>
                 <div className="mt-8 flex items-center justify-center md:hidden">
                     <img
-                        src="./images/Delivery.svg"
+                        src="./images/Delivery.png"
                         alt="Delivery"
                         className="w-[80%] md:w-[65%]"
                     />
                 </div>
                 <div className="mt-8 hidden items-center justify-center md:flex">
                     <img
-                        src="./images/DesktopDelivery.svg"
+                        src="./images/DesktopDelivery.png"
                         alt="Delivery"
                         className=""
                     />

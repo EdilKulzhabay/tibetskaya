@@ -95,7 +95,7 @@ export default function Head({ onScrollToRef, refs, phone, callPhone }) {
                             Общая минерализация, г/дм³: 0,100-0,127
                         </p>
                         <div className="mt-8">
-                            <img src="./images/Circles.svg" alt="hz" />
+                            <img src="./images/Circles.png" alt="hz" />
                         </div>
                     </div>
                 </div>

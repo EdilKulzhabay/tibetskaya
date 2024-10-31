@@ -10,6 +10,7 @@ import Gratitude from "./Pages/Gratitude";
 import Supervisors from "./Pages/Supervisors";
 import Accessories from "./Pages/Accessories";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Agreement from "./Pages/Agreement";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([

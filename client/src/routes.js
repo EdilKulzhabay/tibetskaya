@@ -9,6 +9,7 @@ import Franshiza from "./Pages/Franshiza";
 import Gratitude from "./Pages/Gratitude";
 import Supervisors from "./Pages/Supervisors";
 import Accessories from "./Pages/Accessories";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([
@@ -20,6 +21,7 @@ export const useRoutes = () => {
         { path: "/login", element: <Login /> },
         { path: "/Tamshy/:name", element: <Supervisors /> },
         { path: "/agreement", element: <Agreement /> },
+        { path: "/privacyPolicy", element: <PrivacyPolicy /> },
         {
             path: "/admin",
             element: <Admin />,

@@ -11,6 +11,8 @@ import Supervisors from "./Pages/Supervisors";
 import Accessories from "./Pages/Accessories";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Agreement from "./Pages/Agreement";
+import PublicOffer from "./Pages/PublicOffer";
+import PaymentTerms from "./Pages/PaymentTerms";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([
@@ -23,6 +25,8 @@ export const useRoutes = () => {
         { path: "/Tamshy/:name", element: <Supervisors /> },
         { path: "/agreement", element: <Agreement /> },
         { path: "/privacyPolicy", element: <PrivacyPolicy /> },
+        { path: "/publicOffer", element: <PublicOffer /> },
+        { path: "/paymentTerms", element: <PaymentTerms /> },
         {
             path: "/admin",
             element: <Admin />,

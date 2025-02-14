@@ -230,10 +230,10 @@ IP-адрес устройства;
 
                 {formattedPaymentTerms1}
 
-                <div className="flex justify-center gap-4 my-2">
-                    <img src="/images/PaymentTerms1.png" alt="Оплата" className="w-1/3 h-auto rounded-lg" />
-                    <img src="/images/PaymentTerms2.png" alt="Оплата" className="w-1/3 h-auto rounded-lg" />
-                    <img src="/images/PaymentTerms3.png" alt="Оплата" className="w-1/3 h-auto rounded-lg" />
+                <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-x-4 gap-y-2 my-2">
+                    <img src="/images/PaymentTerms1.png" alt="Оплата" className="w-[200px] h-auto rounded-lg" />
+                    <img src="/images/PaymentTerms2.png" alt="Оплата" className="w-[200px] h-auto rounded-lg" />
+                    <img src="/images/PaymentTerms3.png" alt="Оплата" className="w-[200px] h-auto rounded-lg" />
                 </div>
                 {formattedPaymentTerms2}
             </div>

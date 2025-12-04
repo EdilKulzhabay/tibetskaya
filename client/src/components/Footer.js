@@ -97,8 +97,12 @@ const Footer = forwardRef((props, ref) => {
                                 <br /> Tibetskaya @ 2023{" "}
                             </p>
                             <div className="mt-3">
-                                <Link to="/PublicOffer" className="text-[#ECECEC] text-[10px] md:text-sm">•  Публичная оферта</Link>
-                                <Link to="/PrivacyPolicy" className="text-[#ECECEC] text-[10px] md:text-sm">•  Политика конфиденциальности</Link>
+                                <div>
+                                    <Link to="/PublicOffer" className="text-[#ECECEC] text-[10px] md:text-sm">•  Публичная оферта</Link>
+                                </div>
+                                <div>
+                                    <Link to="/PrivacyPolicy" className="text-[#ECECEC] text-[10px] md:text-sm">•  Политика конфиденциальности</Link>
+                                </div>
                             </div>
                         </div>
                         <div className="flex justify-end items-center w-full">
@@ -132,6 +136,14 @@ const Footer = forwardRef((props, ref) => {
                                 Все права на торговую марку защищены
                                 <br /> Tibetskaya @ 2023{" "}
                             </p>
+                            <div className="mt-3">
+                                <div>
+                                    <Link to="/PublicOffer" className="text-[#ECECEC] text-[10px] md:text-sm">•  Публичная оферта</Link>
+                                </div>
+                                <div>
+                                    <Link to="/PrivacyPolicy" className="text-[#ECECEC] text-[10px] md:text-sm">•  Политика конфиденциальности</Link>
+                                </div>
+                            </div>
                         </div>
                         <div className="">
                             <p className="text-[22px] text-white font-medium ">

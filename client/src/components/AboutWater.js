@@ -1,9 +1,49 @@
 import { forwardRef } from "react";
+import apple from "../assets/images/apple.png";
+import android from "../assets/images/android.png";
 
 const AboutWater = forwardRef((porps, ref) => {
     return (
         <>
-            <section className="container mx-auto px-5 mt-10" ref={ref}>
+            <section className="container mx-auto px-5 mt-3" ref={ref}>
+                {/* Кнопки скачивания приложения */}
+                <div className="mt-10 mb-10 flex flex-col sm:flex-row gap-4 items-stretch justify-center">
+                    {/* Кнопка App Store */}
+                    <a
+                        href="https://apps.apple.com/kz/app/tibetskaya-client/id6752863490"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                    >
+                        <img src={apple} alt="app store" className="w-6 h-6" />
+                        <div className="flex flex-col">
+                            <span className="text-[10px] leading-tight">
+                                Download on
+                            </span>
+                            <span className="text-sm font-semibold leading-tight">
+                                App Store
+                            </span>
+                        </div>
+                    </a>
+
+                    {/* Кнопка Скачать APK */}
+                    <button
+                        onClick={() => {
+                            const link = document.createElement("a");
+                            link.href = "/app.apk";
+                            link.download = "tibetskaya.apk";
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }}
+                        className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity hover:cursor-pointer"
+                    >
+                        <img src={android} alt="android" className="w-6 h-6" />
+                        <span className="text-sm font-semibold">
+                            СКАЧАТЬ APK
+                        </span>
+                    </button>
+                </div>
                 <div className="bg-[#EF4130] w-10 h-1"></div>
                 <p className="text-[32px] md:text-[40px] font-semibold">
                     О воде
@@ -63,6 +103,8 @@ const AboutWater = forwardRef((porps, ref) => {
                 <div className="mt-8">
                     <img src="./images/Circles.png" alt="hz" />
                 </div>
+
+                
             </section>
         </>
     );

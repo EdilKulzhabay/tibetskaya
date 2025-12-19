@@ -39,7 +39,7 @@ export default function Head({ onScrollToRef, refs, phone, callPhone }) {
                         ref={refs.aboutWaterRef}
                     >
                         {/* Кнопки скачивания приложения */}
-                        <div className="mt-10 mb-10 flex flex-col sm:flex-row gap-4 items-stretch justify-center">
+                        <div className="mt-10 mb-10 flex flex-col sm:flex-row gap-4 items-stretch justify-center md:justify-start">
                             {/* Кнопка App Store */}
                             <a
                                 href="https://apps.apple.com/kz/app/tibetskaya-client/id6752863490"

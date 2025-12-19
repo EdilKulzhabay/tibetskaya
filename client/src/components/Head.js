@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import FranshizaHeader from "./FranshizaHeader";
+import apple from "../assets/images/apple.png";
+import android from "../assets/images/android.png";
 
 export default function Head({ onScrollToRef, refs, phone, callPhone }) {
     const url = useLocation();

@@ -59,22 +59,17 @@ export default function Head({ onScrollToRef, refs, phone, callPhone }) {
                             </a>
 
                             {/* Кнопка Скачать APK */}
-                            <button
-                                onClick={() => {
-                                    const link = document.createElement("a");
-                                    link.href = "/app.apk";
-                                    link.download = "tibetskaya.apk";
-                                    document.body.appendChild(link);
-                                    link.click();
-                                    document.body.removeChild(link);
-                                }}
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.tibetskayaclientapp"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity hover:cursor-pointer"
                             >
                                 <img src={android} alt="android" className="w-6 h-6" />
                                 <span className="text-sm font-semibold">
                                     СКАЧАТЬ APK
                                 </span>
-                            </button>
+                            </a>
                         </div>
                         <div className="bg-[#EF4130] w-10 h-1"></div>
                         <p className="text-[32px] font-semibold xl:text-[60px]">

@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
     return (
         <div className="flex flex-col min-h-screen justify-between">
             <div className="pt-5 px-5 space-y-3">
-                <h2 className="text-lg font-bold">ПУБЛИЧНАЯ ОФЕРТА (ПРЕДЛОЖЕНИЕ)</h2>
+                <h2 className="text-lg font-bold">ПУБЛИЧНАЯ ОФЕРТА</h2>
                 {formattedPublicOffer}
             </div>
 

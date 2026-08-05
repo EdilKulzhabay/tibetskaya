@@ -10,6 +10,7 @@ import Gratitude from "./Pages/Gratitude";
 import Supervisors from "./Pages/Supervisors";
 import Accessories from "./Pages/Accessories";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import CourierPrivacyPolicy from "./Pages/CourierPrivacyPolicy";
 import Agreement from "./Pages/Agreement";
 import PublicOffer from "./Pages/PublicOffer";
 import PaymentTerms from "./Pages/PaymentTerms";
@@ -25,6 +26,7 @@ export const useRoutes = () => {
         { path: "/Tamshy/:name", element: <Supervisors /> },
         { path: "/agreement", element: <Agreement /> },
         { path: "/privacyPolicy", element: <PrivacyPolicy /> },
+        { path: "/courierPrivacyPolicy", element: <CourierPrivacyPolicy /> },
         { path: "/publicOffer", element: <PublicOffer /> },
         { path: "/paymentTerms", element: <PaymentTerms /> },
         {

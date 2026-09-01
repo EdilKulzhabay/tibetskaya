@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import apple from "../assets/images/apple.png";
-import android from "../assets/images/android.png";
+import googlePlay from "../assets/images/googlePlay.png";
 
 const AboutWater = forwardRef((porps, ref) => {
     return (
@@ -33,10 +33,15 @@ const AboutWater = forwardRef((porps, ref) => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity hover:cursor-pointer"
                     >
-                        <img src={android} alt="android" className="w-6 h-6" />
-                        <span className="text-sm font-semibold">
-                            СКАЧАТЬ APK
-                        </span>
+                        <img src={googlePlay} alt="android" className="w-6 h-6" />
+                        <div className="flex flex-col">
+                            <span className="text-[10px] leading-tight">
+                                Download on
+                            </span>
+                            <span className="text-sm font-semibold leading-tight">
+                                Google Play
+                            </span>
+                        </div>
                     </a>
                 </div>
                 <div className="bg-[#EF4130] w-10 h-1"></div>

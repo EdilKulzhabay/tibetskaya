@@ -16,14 +16,6 @@ export default function ProductCard(props) {
                 <p className="mt-1">{props.product.description}</p>
                 <p className="mt-1 font-bold">{props.product.price} ₸</p>
             </div>
-            <a
-                target="_blank"
-                rel="noreferrer"
-                href={props.whatsapp}
-                className="mt-5 mx-auto max-w-max bg-[#EF4130] hover:bg-[#ef4030e2] py-3 px-14 text-white font-semibold rounded-3xl md:text-xl"
-            >
-                Заказать
-            </a>
         </div>
     );
 }

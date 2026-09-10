@@ -4,9 +4,10 @@ import bottle from "../assets/images/appLanding/bottle.webp";
 import logoWhite from "../assets/images/appLanding/logo-white.png";
 import logoRed from "../assets/images/appLanding/logo-red.png";
 
-const ANDROID_URL =
-    "https://play.google.com/store/apps/details?id=com.tibetskayaclientapp";
-const IOS_URL = "https://apps.apple.com/kz/app/tibetskaya-client/id6752863490";
+const ADJUST_URL =
+    "https://app.adjust.com/24je537k?og_title=%D0%A2%D0%B8%D0%B1%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F+%D0%B2%D0%BE%D0%B4%D0%B0&og_image=https%3A%2F%2Ftibetskayacrm.kz%2FnewIcon.jpg";
+const ANDROID_URL = ADJUST_URL;
+const IOS_URL = ADJUST_URL;
 
 const STEPS = [
     {

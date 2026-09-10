@@ -16,6 +16,7 @@ import PublicOffer from "./Pages/PublicOffer";
 import PaymentTerms from "./Pages/PaymentTerms";
 import AccountDeletion from "./Pages/AccountDeletion";
 import AppLanding from "./Pages/AppLanding";
+import AdsApiDocs from "./Pages/AdsApiDocs";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([
@@ -33,6 +34,7 @@ export const useRoutes = () => {
         { path: "/paymentTerms", element: <PaymentTerms /> },
         { path: "/accountDeletion", element: <AccountDeletion /> },
         { path: "/app", element: <AppLanding /> },
+        { path: "/ads-docs", element: <AdsApiDocs /> },
         {
             path: "/admin",
             element: <Admin />,

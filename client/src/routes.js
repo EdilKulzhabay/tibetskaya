@@ -14,6 +14,7 @@ import CourierPrivacyPolicy from "./Pages/CourierPrivacyPolicy";
 import Agreement from "./Pages/Agreement";
 import PublicOffer from "./Pages/PublicOffer";
 import PaymentTerms from "./Pages/PaymentTerms";
+import AccountDeletion from "./Pages/AccountDeletion";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([
@@ -29,6 +30,7 @@ export const useRoutes = () => {
         { path: "/courierPrivacyPolicy", element: <CourierPrivacyPolicy /> },
         { path: "/publicOffer", element: <PublicOffer /> },
         { path: "/paymentTerms", element: <PaymentTerms /> },
+        { path: "/accountDeletion", element: <AccountDeletion /> },
         {
             path: "/admin",
             element: <Admin />,

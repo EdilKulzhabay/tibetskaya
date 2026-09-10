@@ -15,6 +15,7 @@ import Agreement from "./Pages/Agreement";
 import PublicOffer from "./Pages/PublicOffer";
 import PaymentTerms from "./Pages/PaymentTerms";
 import AccountDeletion from "./Pages/AccountDeletion";
+import AppLanding from "./Pages/AppLanding";
 
 export const useRoutes = () => {
     const router = createBrowserRouter([
@@ -31,6 +32,7 @@ export const useRoutes = () => {
         { path: "/publicOffer", element: <PublicOffer /> },
         { path: "/paymentTerms", element: <PaymentTerms /> },
         { path: "/accountDeletion", element: <AccountDeletion /> },
+        { path: "/app", element: <AppLanding /> },
         {
             path: "/admin",
             element: <Admin />,

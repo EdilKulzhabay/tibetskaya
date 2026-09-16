@@ -60,6 +60,8 @@ export default function Franshiza() {
                     phone="+7 747 531 55 58"
                     whatsapp="https://wa.me/77475315558"
                     mail="info@tibetskaya.kz"
+                    onScrollToRef={scrollToRef}
+                    refs={{ aboutWaterRef, aboutWaterMobRef, footerRef }}
                 />
             </div>
         </>

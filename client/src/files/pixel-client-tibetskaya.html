@@ -1,0 +1,99 @@
+<!-- ===== 1. Базовый код пикселя Meta - вставить в <head> страницы ===== -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4433061166916167');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4433061166916167&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+<!-- ===== 2. Разметка кнопок - на КАЖДУЮ кнопку скачивания на странице (хиро, CTA-блок, липкая панель -
+     сколько бы их ни было) добавить атрибут data-track-event. Пример: ===== -->
+
+<!-- было:
+<button type="button" style="...">Скачать для Android</button>
+-->
+
+<!-- стало: -->
+<button type="button" data-track-event="download_android" style="...">Скачать для Android</button>
+<button type="button" data-track-event="download_ios" style="...">Скачать для iOS</button>
+
+<!-- Повторить data-track-event="download_android" / "download_ios" на всех остальных парах
+     таких кнопок на странице (в hero, в CTA-секции, в липкой панели у варианта B и т.д.) -->
+
+
+<!-- ===== 3. Обработчик событий - вставить перед </body>, один раз на страницу ===== -->
+<script>
+  var EVENT_MAP = {
+    download_android: 'DownloadClickAndroid',
+    download_ios: 'DownloadClickIOS'
+  };
+
+  function generateEventId() {
+    return 'evt_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+  }
+
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  // fbc иногда не успевает записаться в куки на первом клике сразу после перехода
+  // по рекламе. Фолбэк - собираем его вручную из fbclid в адресной строке.
+  function getFbc() {
+    var fbcCookie = getCookie('_fbc');
+    if (fbcCookie) return fbcCookie;
+
+    var params = new URLSearchParams(window.location.search);
+    var fbclid = params.get('fbclid');
+    if (fbclid) {
+      return 'fb.1.' + Date.now() + '.' + fbclid;
+    }
+    return null;
+  }
+
+  function trackDownloadClick(trackKey) {
+    var eventName = EVENT_MAP[trackKey];
+    if (!eventName) return;
+
+    var eventId = generateEventId();
+
+    // Клиентский пиксель
+    fbq('trackCustom', eventName, {}, { eventID: eventId });
+
+    // Зеркалим на бэкенд, чтобы тот отправил то же самое через КАПИ
+    fetch('/api/track-download', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: eventName,
+        eventId: eventId,
+        fbp: getCookie('_fbp'),
+        fbc: getFbc(),
+        sourceUrl: window.location.href
+      })
+    }).catch(function (err) {
+      console.error('CAPI mirror failed', err);
+    });
+  }
+
+  // Один обработчик на всю страницу - сработает на любую кнопку с data-track-event,
+  // сколько бы их ни было и где бы они ни находились
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-track-event]');
+    if (el) {
+      trackDownloadClick(el.getAttribute('data-track-event'));
+    }
+  });
+</script>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import bottle from "../assets/images/appLanding/bottle.webp";
 import logoWhite from "../assets/images/appLanding/logo-white.png";
@@ -8,6 +8,62 @@ const ADJUST_URL =
     "https://app.adjust.com/24je537k?og_title=%D0%A2%D0%B8%D0%B1%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F+%D0%B2%D0%BE%D0%B4%D0%B0&og_image=https%3A%2F%2Ftibetskayacrm.kz%2FnewIcon.jpg";
 const ANDROID_URL = ADJUST_URL;
 const IOS_URL = ADJUST_URL;
+
+// Отдельный Meta Pixel для App-лендинга (второй pixel ID поверх глобального
+// в public/index.html — fbevents.js уже загружен им, здесь только init + события).
+const PIXEL_ID = "4433061166916167";
+const TRACK_DOWNLOAD_URL = "https://api.tibetskaya.kz/api/track-download";
+
+const DOWNLOAD_EVENT_MAP = {
+    download_android: "DownloadClickAndroid",
+    download_ios: "DownloadClickIOS",
+};
+
+function generateEventId() {
+    return "evt_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+}
+
+function getCookie(name) {
+    const match = document.cookie.match(
+        new RegExp("(^| )" + name + "=([^;]+)")
+    );
+    return match ? match[2] : null;
+}
+
+// fbc иногда не успевает записаться в куки на первом клике сразу после
+// перехода по рекламе — берём его из fbclid в адресной строке как фолбэк.
+function getFbc() {
+    const fbcCookie = getCookie("_fbc");
+    if (fbcCookie) return fbcCookie;
+
+    const fbclid = new URLSearchParams(window.location.search).get("fbclid");
+    return fbclid ? `fb.1.${Date.now()}.${fbclid}` : null;
+}
+
+function trackDownloadClick(trackKey) {
+    const eventName = DOWNLOAD_EVENT_MAP[trackKey];
+    if (!eventName || !window.fbq) return;
+
+    const eventId = generateEventId();
+
+    // Клиентский пиксель
+    window.fbq("trackCustom", eventName, {}, { eventID: eventId });
+
+    // Зеркалим на бэкенд, чтобы тот отправил то же самое через CAPI
+    fetch(TRACK_DOWNLOAD_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            eventName,
+            eventId,
+            fbp: getCookie("_fbp"),
+            fbc: getFbc(),
+            sourceUrl: window.location.href,
+        }),
+    }).catch((err) => {
+        console.error("CAPI mirror failed", err);
+    });
+}
 
 const STEPS = [
     {
@@ -40,6 +96,7 @@ function DownloadButtons({ className = "" }) {
                 href={ANDROID_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track-event="download_android"
                 className="flex-1 lg:flex-none lg:min-w-[230px] flex items-center justify-center min-h-[56px] lg:min-h-[64px] px-6 rounded-2xl lg:rounded-[18px] bg-white text-[#E32219] font-extrabold text-[15px] lg:text-[17px] tracking-[-0.2px] transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-px"
             >
                 Скачать для Android
@@ -48,6 +105,7 @@ function DownloadButtons({ className = "" }) {
                 href={IOS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track-event="download_ios"
                 className="flex-1 lg:flex-none lg:min-w-[230px] flex items-center justify-center min-h-[56px] lg:min-h-[64px] px-6 rounded-2xl lg:rounded-[18px] border-[1.5px] border-white/75 bg-transparent text-white font-extrabold text-[15px] lg:text-[17px] tracking-[-0.2px] transition-colors duration-150 hover:bg-white/[0.14] active:translate-y-px"
             >
                 Скачать для iOS
@@ -57,6 +115,21 @@ function DownloadButtons({ className = "" }) {
 }
 
 export default function AppLanding() {
+    useEffect(() => {
+        window.fbq?.("init", PIXEL_ID);
+        window.fbq?.("track", "PageView");
+
+        const handleClick = (event) => {
+            const trigger = event.target.closest("[data-track-event]");
+            if (trigger) {
+                trackDownloadClick(trigger.getAttribute("data-track-event"));
+            }
+        };
+
+        document.addEventListener("click", handleClick);
+        return () => document.removeEventListener("click", handleClick);
+    }, []);
+
     return (
         <>
             <Helmet>
@@ -75,6 +148,7 @@ export default function AppLanding() {
                     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
                     rel="stylesheet"
                 />
+                <noscript>{`<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1" />`}</noscript>
             </Helmet>
 
             <div style={{ fontFamily: "Manrope, system-ui, sans-serif" }}>

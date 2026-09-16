@@ -8,8 +8,31 @@ import { ReactComponent as Triangle2 } from "../assets/icons/Triangle2.svg";
 import { ReactComponent as Triangle3 } from "../assets/icons/Triangle3.svg";
 import clsx from "clsx";
 
+function FooterNavLink({ refKey, refs, onScrollToRef, className, children }) {
+    const targetRef = refs?.[refKey];
+
+    if (onScrollToRef && targetRef) {
+        return (
+            <button
+                type="button"
+                onClick={() => onScrollToRef(targetRef)}
+                className={clsx("block text-left", className)}
+            >
+                {children}
+            </button>
+        );
+    }
+
+    return (
+        <Link to="/" className={clsx("block", className)}>
+            {children}
+        </Link>
+    );
+}
+
 const Footer = forwardRef((props, ref) => {
     const url = useLocation();
+    const { onScrollToRef, refs } = props;
 
     //url.pathname === "/franshiza"
 
@@ -69,21 +92,38 @@ const Footer = forwardRef((props, ref) => {
                             <p className="text-[22px] text-white font-medium md:text-[28px]">
                                 О бренде
                             </p>
-                            <p className="mt-3 text-[#ECECEC] md:text-xl">
+                            <FooterNavLink
+                                refKey="aboutWaterMobRef"
+                                refs={refs}
+                                onScrollToRef={onScrollToRef}
+                                className="mt-3 text-[#ECECEC] md:text-xl"
+                            >
                                 О воде
-                            </p>
-                            <p className="text-[#ECECEC] md:text-xl">Цена</p>
-                            <p className="text-[#ECECEC] md:text-xl">
+                            </FooterNavLink>
+                            <FooterNavLink
+                                refKey="pricesRef"
+                                refs={refs}
+                                onScrollToRef={onScrollToRef}
+                                className="text-[#ECECEC] md:text-xl"
+                            >
+                                Цена
+                            </FooterNavLink>
+                            <FooterNavLink
+                                refKey="deliveryRef"
+                                refs={refs}
+                                onScrollToRef={onScrollToRef}
+                                className="text-[#ECECEC] md:text-xl"
+                            >
                                 Доставка
-                            </p>
-                            {url.pathname !== "/Franchise" && (
+                            </FooterNavLink>
+                            {/* {url.pathname !== "/Franchise" && (
                                 <Link
                                     to={"/Franchise"}
                                     className="text-[#ECECEC] md:text-xl"
                                 >
                                     Сотрудничество с нами
                                 </Link>
-                            )}
+                            )} */}
                         </div>
 
                         <div className="min-w-[220px] col-span-2">
@@ -160,17 +200,38 @@ const Footer = forwardRef((props, ref) => {
                             <p className="text-[22px] text-white font-medium ">
                                 О бренде
                             </p>
-                            <p className="mt-3 text-[#ECECEC] ">О воде</p>
-                            <p className="text-[#ECECEC] ">Цена</p>
-                            <p className="text-[#ECECEC] ">Доставка</p>
-                            {url.pathname !== "/Franchise" && (
+                            <FooterNavLink
+                                refKey="aboutWaterRef"
+                                refs={refs}
+                                onScrollToRef={onScrollToRef}
+                                className="mt-3 text-[#ECECEC]"
+                            >
+                                О воде
+                            </FooterNavLink>
+                            <FooterNavLink
+                                refKey="pricesRef"
+                                refs={refs}
+                                onScrollToRef={onScrollToRef}
+                                className="text-[#ECECEC]"
+                            >
+                                Цена
+                            </FooterNavLink>
+                            <FooterNavLink
+                                refKey="deliveryRef"
+                                refs={refs}
+                                onScrollToRef={onScrollToRef}
+                                className="text-[#ECECEC]"
+                            >
+                                Доставка
+                            </FooterNavLink>
+                            {/* {url.pathname !== "/Franchise" && (
                                 <Link
                                     to={"/Franchise"}
                                     className="text-[#ECECEC]"
                                 >
                                     Сотрудничество с нами
                                 </Link>
-                            )}
+                            )} */}
                         </div>
                         <div className="flex justify-end items-end">
                             <a

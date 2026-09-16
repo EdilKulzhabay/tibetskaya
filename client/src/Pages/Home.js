@@ -110,9 +110,34 @@ export default function Home() {
                     </div>
                 </section>
 
+                <section
+                    className="container mx-auto px-5 mt-20 lg:px-10 xl:px-24 flex items-center justify-between gap-x-10"
+                >
+                    <div className="w-full h-[2px] bg-[#729bb9]"></div>
+                    <div className="flex flex-col items-center gap-y-2 sm:flex-row sm:justify-between sm:gap-x-4 flex-1 min-w-content">
+                        <div className="whitespace-nowrap text-[#3d5376]">Принимаем к оплате</div>
+                        <div>
+                            <img src="./images/PaymentMethods.png" alt="payment" />
+                        </div>
+                    </div>
+                    <div className="w-full h-[2px] bg-[#729bb9]"></div>
+                </section>
+
                 <Delivery ref={deliveryRef} whatsapp={whatsapp} />
 
-                <Footer ref={footerRef} phone={phone} mail={mail} />
+                <Footer
+                    ref={footerRef}
+                    phone={phone}
+                    mail={mail}
+                    onScrollToRef={scrollToRef}
+                    refs={{
+                        aboutWaterRef,
+                        aboutWaterMobRef,
+                        pricesRef,
+                        deliveryRef,
+                        footerRef,
+                    }}
+                />
             </div>
         </>
     );

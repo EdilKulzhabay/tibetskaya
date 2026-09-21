@@ -143,6 +143,12 @@ const Footer = forwardRef((props, ref) => {
                                 <div>
                                     <Link to="/PrivacyPolicy" className="text-[#ECECEC] text-[10px] md:text-sm">•  Политика конфиденциальности</Link>
                                 </div>
+                                <div>
+                                    <Link to="/deliveryTerms" className="text-[#ECECEC] text-[10px] md:text-sm">•  Условия доставки</Link>
+                                </div>
+                                <div>
+                                    <Link to="/paymentRefundTerms" className="text-[#ECECEC] text-[10px] md:text-sm">•  Условия оплаты и возврата</Link>
+                                </div>
                             </div>
                         </div>
                         <div className="flex justify-end items-center w-full">
@@ -182,6 +188,12 @@ const Footer = forwardRef((props, ref) => {
                                 </div>
                                 <div>
                                     <Link to="/PrivacyPolicy" className="text-[#ECECEC] text-[10px] md:text-sm">•  Политика конфиденциальности</Link>
+                                </div>
+                                <div>
+                                    <Link to="/deliveryTerms" className="text-[#ECECEC] text-[10px] md:text-sm">•  Условия доставки</Link>
+                                </div>
+                                <div>
+                                    <Link to="/paymentRefundTerms" className="text-[#ECECEC] text-[10px] md:text-sm">•  Условия оплаты и возврата</Link>
                                 </div>
                             </div>
                         </div>

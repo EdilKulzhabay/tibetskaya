@@ -14,6 +14,8 @@ import CourierPrivacyPolicy from "./Pages/CourierPrivacyPolicy";
 import Agreement from "./Pages/Agreement";
 import PublicOffer from "./Pages/PublicOffer";
 import PaymentTerms from "./Pages/PaymentTerms";
+import PaymentRefundTerms from "./Pages/PaymentRefundTerms";
+import DeliveryTerms from "./Pages/DeliveryTerms";
 import AccountDeletion from "./Pages/AccountDeletion";
 import AppLanding from "./Pages/AppLanding";
 import AdsApiDocs from "./Pages/AdsApiDocs";
@@ -32,6 +34,8 @@ export const useRoutes = () => {
         { path: "/courierPrivacyPolicy", element: <CourierPrivacyPolicy /> },
         { path: "/publicOffer", element: <PublicOffer /> },
         { path: "/paymentTerms", element: <PaymentTerms /> },
+        { path: "/paymentRefundTerms", element: <PaymentRefundTerms /> },
+        { path: "/deliveryTerms", element: <DeliveryTerms /> },
         { path: "/accountDeletion", element: <AccountDeletion /> },
         { path: "/app", element: <AppLanding /> },
         { path: "/ads-docs", element: <AdsApiDocs /> },

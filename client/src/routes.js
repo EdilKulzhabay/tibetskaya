@@ -17,6 +17,8 @@ import PaymentTerms from "./Pages/PaymentTerms";
 import PaymentRefundTerms from "./Pages/PaymentRefundTerms";
 import DeliveryTerms from "./Pages/DeliveryTerms";
 import AccountDeletion from "./Pages/AccountDeletion";
+import PartnerOffer from "./Pages/PartnerOffer";
+import PartnerPrivacyPolicy from "./Pages/PartnerPrivacyPolicy";
 import AppLanding from "./Pages/AppLanding";
 import AdsApiDocs from "./Pages/AdsApiDocs";
 
@@ -32,6 +34,8 @@ export const useRoutes = () => {
         { path: "/agreement", element: <Agreement /> },
         { path: "/privacyPolicy", element: <PrivacyPolicy /> },
         { path: "/courierPrivacyPolicy", element: <CourierPrivacyPolicy /> },
+        { path: "/partnerOffer", element: <PartnerOffer /> },
+        { path: "/partnerPrivacyPolicy", element: <PartnerPrivacyPolicy /> },
         { path: "/publicOffer", element: <PublicOffer /> },
         { path: "/paymentTerms", element: <PaymentTerms /> },
         { path: "/paymentRefundTerms", element: <PaymentRefundTerms /> },

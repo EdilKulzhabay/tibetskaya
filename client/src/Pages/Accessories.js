@@ -4,13 +4,17 @@ import { useState, useEffect } from "react";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"; // Добавляем стили аннотаций
 import "react-pdf/dist/esm/Page/TextLayer.css"; // Добавляем стили текстового слоя
 
+// Воркер обязан быть той же версии, что и pdf.js внутри react-pdf, иначе
+// "Failed to load PDF file". Берём версию из самой библиотеки, чтобы обновление
+// react-pdf не ломало страницу. Задаём до рендера: эффекты <Document> выполняются
+// раньше эффектов этого компонента.
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+
 export default function Accessories() {
     const [numPages, setNumPages] = useState(null);
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        pdfjs.GlobalWorkerOptions.workerSrc = "/js/pdf.worker.min.js";
-
         // Обработчик для изменения ширины экрана
         const handleResize = () => {
             setWidth(window.innerWidth);
